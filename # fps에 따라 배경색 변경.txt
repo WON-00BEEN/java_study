@@ -1,0 +1,44 @@
+# fps에 따라 배경색 변경
+import pygame
+
+# 1. 초기화 -> 변수의 선언
+pygame.init()
+
+# 2. 게임 화면 설정 -> 고정값
+size = [700, 700]
+screen = pygame.display.set_mode(size)
+title = 'pyamge example'
+pygame.display.set_caption(title)
+
+# 3. 게임 내에서의 설정 -> 변수
+clock = pygame.time.Clock()
+color1 = (66, 245, 191)
+color2 = (0, 0, 0)
+
+# 4. 메인 이벤트
+system = 0
+k = 0
+while system == 0:
+# 4-1. FPS(Frame per sec) 설정
+    clock.tick(2)
+
+# 4-2. 입력(키보드,마우스)의 감지 -> 활용
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            system = 1
+
+# 4-3. 입력에 따른 변화, 시간에 따른 변화
+    if k == 0:
+        color = color1
+        k += 1
+    else :
+        color = color2
+        k -= 1
+
+# 4-4. 전사작업(그리기)
+    screen.fill(color)
+# 4-5. 업데이트
+    pygame.display.flip()
+
+# 5. 종료(x버튼, game over)
+pygame.quit()
