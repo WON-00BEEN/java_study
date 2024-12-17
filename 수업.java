@@ -1,84 +1,75 @@
-package java_study_1128;
+package java_study_1217;
+
+class 계산기 {
+	
+	         public int sum(int x, int y)  {
+	        	 return x + y;
+    }
+}
+
+
+class 계산기2 {
+	
+           public int sum(int x, int y)  {
+   	       return x + y;
+    }
+    
+          public int minus(int x, int y) {
+        	  return x - y;
+          }
+    
+}
+
+// ******extends : 상속
+/*
+ * 
+ * (자식클래스 == subClass)
+ * 계산기(qnahzm부모클래스  == superClass)
+ */
+
+
+
+class 계산기3 extends 계산기{
+	 
+	    //부모클래스에 있는 베소드 가져오기
+	//@Override : 오버라이딩 (부모클래스 메소드 **********)
+	/*
+	 *  오버로딩 : 메소드 이름은 중복 허용하기(파라미터 타입 다르게 지정)
+	 *  오버라이딩 : 부모클래스에 정의된 메소드를 자식클래스에서 호출.
+	 */
+	    @Override
+	    public int sum(int x, int y) {
+	           // TODO Auto-generated method stub
+	           return super.sum(x, y);
+	    }
+	    
+	    
+	    
+
+	
+	     public int minus(int x, int y) {
+	    	 return x -y;
+	     }
+}
 
 public class 수업 {
 
 	public static void main(String[] args) {
 		
+		계산기 계산기1 = new 계산기();
+		int result = 계산기1.sum(10, 10);
+		System.out.println("결과 : "+ result);
 		
-		
-		String text = "ediya";
-		System.out.println("문자열 길이 "+text.length());
-		
-		
-		String userId = "홍길동";
-		if(userId.length() >= 10 ) {
-			
-		System.out.println("아이디는 10글자 미만으로 작성");
-	   } else {
-	    System.out.println("사용 가능한 아이디입니다. ");
-	   }
- 
-		//concat : 두 문자열을 합친다.
-	      String a = "apple";
-	      String b = "watch";
-	      System.out.println("문자열 합치기 "+a.concat(b));
-	      
-	      //*substring : 부분 문자열 추출 (빈도수 80~90%)
-	      String text1 = "Hello, World!";
-	      System.out.println(text1.substring(0, 5));
-	      //퀴즈 : Wor <- 서브스트링으로 해당 단어 출력하기
-	      System.out.println(text1.substring(7, 10));
-	      
-	      //indexOf : 문자열 검색 -> 해당 문자가 몇번 째 위치하는지 조회
-	      System.out.println(text1.indexOf("l")); // 2번째 위치
-	      System.out.println(text1.indexOf("W")); // 7번째 위치
-	      
-	      //*** replace : 문자열 대체
-	      String word = "순대국밥";
-	      System.out.println(word.replaceAll("순대", "돼지"));//순대를 돼지로 대체
-	      //순대국밥에서 돼지국밥으로 변경
-	      
-	      //* toUpper,toLower : 소문자 -> 대문자, 대문자 -> 소문자 변경
-	      String code = "abcd00";
-	      System.out.println(code.toUpperCase()); //소문자에서 대문자로 강제변환
-	   
-	      //** trim :공백 제거
-	      String word2 = "    안녕하세요?    ";
-	      System.out.println(word2.trim()); //앞뒤 공백 제거
-	   
-	      //*** split : 문자 분할
-	      String word3 = "한화이글스,두산베어스,롯데자이언츠";
-	      String[] result = word3.split(","); //해당 문자를 콤마로 나눈다.
-	      System.out.println(result[0]);
-	      System.out.println(result[2]);
-	      
-	      //** contains : 특정 문자열이 포함되어 있는지 여부
-	      String word4 = "iwonbin354@gmail.com";
-          System.out.println(word4.contains("@")); //있으면 true 없으면 false
-          System.out.println(word4.contains("z")); //있으면 true 없으면 false
-	     
-	      
-	      //*** equals : 문자열 비교 (*자바특징)
-	      String food = "등심돈까스";
-	      String food2 = "등심돈까스";
-	      String food3 = "치즈돈까스";
-	      // ==(비교연산자), 자바에서는 문자열 비교는 equals로 합니다.
-	       System.out.println(food.equals(food2)); //두 문자가 동일한지 비교   
-	       System.out.println(food.equals(food3)); //두 문자가 동일한지 비교   
-	      
-	      
+		    //빼기와 더하기 기능이 있는 클래스
+		/*
+		 *  자바는 무료 오픈소스 -내장클래스를 확인할 수 있음
+		 */
+             Scanner scan = new scanner(System.in);
+             
+             
+             
+             계산기3 계산기3 = new 계산기3();
+             계산기3.sum(10, 20);
+	}
 
-             //
-             String word4 = "iwonbin354@gmail.com";
-             System.out.println(word4.contains("@"));
-             System.out.println(word4.contains("z"));
-             
-            //
-             
-             
-             
-             
-             
-             
-             
-             
+}
